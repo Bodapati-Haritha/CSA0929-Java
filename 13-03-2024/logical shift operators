@@ -1,0 +1,29 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] A = {5, 8, 3, 10, 2};
+        int[] B = {3, 7, 1, 9, 5};
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] > B[i]) {
+                A[i] = A[i] >> 1;
+                B[i] = B[i] << 1;
+            } else {
+                A[i] = A[i] << 1;
+                B[i] = B[i] >> 1;
+            }
+        }
+        System.out.println("Shifted Array A:");
+        for (int num : A) {
+            System.out.print(num + " ");
+        }
+        System.out.println("\nShifted Array B:");
+        for (int num : B) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+OUTPUT:
+Shifted Array A:
+2 4 1 5 4 
+Shifted Array B:
+6 14 2 18 2 
