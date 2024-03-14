@@ -1,0 +1,10 @@
+import java.util.UUID;
+public class Main {
+    public static void main(String[] args) {
+        UUID uuid = UUID.randomUUID();
+        System.out.println("Random UUID: " + uuid);
+    }
+}
+
+OUTPUT:
+Random UUID: 1b685918-782e-43f8-9c27-5da12b088a47
