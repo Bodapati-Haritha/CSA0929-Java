@@ -1,0 +1,23 @@
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+class MyClass {
+    public void myMethod() throws CustomException {
+        throw new CustomException("Custom exception occurred in myMethod");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+        try {
+            myClass.myMethod();
+        } catch (CustomException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+
+OUTPUT:
+Error: Custom exception occurred in myMethod
