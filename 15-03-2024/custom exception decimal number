@@ -1,0 +1,27 @@
+class InvalidDecimalNumberException extends Exception {
+    public InvalidDecimalNumberException(String message) {
+        super(message);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        try {
+            double userInput = getUserInput();
+            if (!isValidDecimal(userInput)) {
+                throw new InvalidDecimalNumberException("Invalid decimal number entered");
+            }
+            System.out.println("User input: " + userInput);
+        } catch (InvalidDecimalNumberException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+    public static double getUserInput() {
+        return 10.5;
+    }
+    public static boolean isValidDecimal(double number) {
+        return true;
+    }
+}
+
+OUTPUT:
+User input: 10.5
