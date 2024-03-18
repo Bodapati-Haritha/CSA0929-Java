@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        int m=4,n=5;
+        for (int i=1;i<=n;i++){
+            System.out.println(i+"x"+m+"="+(i*m));
+        }
+    }
+}
+
+OUTPUT:
+1x4=4
+2x4=8
+3x4=12
+4x4=16
+5x4=20
