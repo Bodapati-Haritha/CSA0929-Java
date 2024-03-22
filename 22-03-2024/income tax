@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        int income = 600000;
+        float tax;
+        int taxableIncome;
+        if (income <= 250000) {
+            taxableIncome = 0;
+            System.out.println("No tax");
+        } else if (income <= 500000) {
+            taxableIncome = income - 250000;
+            tax = taxableIncome / 10f;
+            System.out.println("Taxable Income: " + taxableIncome);
+            System.out.println("Tax: " + tax);
+        } else if (income <= 1000000) {
+            taxableIncome = income - 500000;
+            tax = taxableIncome / 20f + 25000;
+            System.out.println("Taxable Income: " + taxableIncome);
+            System.out.println("Tax: " + tax);
+        } else {
+            taxableIncome = income - 1000000;
+            tax = taxableIncome / 30f + 125000;
+            System.out.println("Taxable Income: " + taxableIncome);
+            System.out.println("Tax: " + tax);
+        }
+    }
+}
+
+OUTPUT:
+Taxable Income: 100000
+Tax: 30000.0
