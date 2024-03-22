@@ -1,0 +1,72 @@
+import java.util.Scanner;
+interface Marks {
+    int getTotalMarks();
+}
+interface Aggregate {
+    double calculateAggregate(int totalMarks);
+}
+interface Grade {
+    String calculateGrade(double aggregate);
+}
+public class Main implements Marks, Aggregate, Grade {
+    private int[] marks = new int[6];
+    public void inputMarks() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the marks in Python: ");
+        marks[0] = scanner.nextInt();
+        System.out.print("Enter the marks in C Programming: ");
+        marks[1] = scanner.nextInt();
+        System.out.print("Enter the marks in Mathematics: ");
+        marks[2] = scanner.nextInt();
+        System.out.print("Enter the marks in Physics: ");
+        marks[3] = scanner.nextInt();
+        System.out.print("Enter the marks in Chemistry: ");
+        marks[4] = scanner.nextInt();
+        System.out.print("Enter the marks in Professional Ethics: ");
+        marks[5] = scanner.nextInt();
+    }
+    public int getTotalMarks() {
+        int total = 0;
+        for (int mark : marks) {
+            total += mark;
+        }
+        return total;
+    }
+    public double calculateAggregate(int totalMarks) {
+        return (double) totalMarks / marks.length;
+    }
+    public String calculateGrade(double aggregate) {
+        if (aggregate > 75) {
+            return "DISTINCTION";
+        } else if (aggregate >= 60 && aggregate <= 75) {
+            return "FIRST DIVISION";
+        } else if (aggregate >= 50 && aggregate < 60) {
+            return "SECOND DIVISION";
+        } else if (aggregate >= 40 && aggregate < 50) {
+            return "THIRD DIVISION";
+        } else {
+            return "FAIL";
+        }
+    }
+    public static void main(String[] args) {
+        Main student = new Main();
+        student.inputMarks();
+        int totalMarks = student.getTotalMarks();
+        double aggregate = student.calculateAggregate(totalMarks);
+        String grade = student.calculateGrade(aggregate);
+        System.out.println("Total= " + totalMarks);
+        System.out.println("Aggregate = " + String.format("%.2f", aggregate));
+        System.out.println("Class: " + grade);
+    }
+}
+
+OUTPUT:
+Enter the marks in Python: 90
+Enter the marks in C Programming: 91
+Enter the marks in Mathematics: 92
+Enter the marks in Physics: 93
+Enter the marks in Chemistry: 92
+Enter the marks in Professional Ethics: 93
+Total= 551
+Aggregate = 91.83
+Class: DISTINCTION
